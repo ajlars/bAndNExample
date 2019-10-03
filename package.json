@@ -1,0 +1,20 @@
+{
+  "name": "bandnexample",
+  "version": "1.0.0",
+  "description": "A Nightwatch automation example.",
+  "main": "n/a",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chromedriver": "^77.0.0",
+    "geckodriver": "^1.18.0",
+    "nightwatch": "^1.2.4"
+  },
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "AJ Larson",
+  "license": "ISC"
+}
