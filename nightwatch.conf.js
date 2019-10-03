@@ -12,7 +12,11 @@ module.exports = {
       "screenshots": {
         "enabled": false,
         "path": ""
-      },
+      }
+
+    },
+
+    "chrome":{
       "webdriver": {
         "start_process": true,
         "server_path": chromedriver.path,
