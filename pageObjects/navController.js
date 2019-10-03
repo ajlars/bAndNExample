@@ -1,4 +1,4 @@
-
+var utilities = require('../testAssets/utilities')
 module.exports = {
     url: "http://www.barnesandnoble.com",
     elements: {
@@ -10,7 +10,7 @@ module.exports = {
             locateStrategy: "xpath"
         }
     },
-    commands: [{                                // Commands can be created inline
+    commands: [utilities, {                                // Commands can be created inline
         searchFor: function (searchTerm) {      // *or* referenced externally.
             this.waitForElementVisible("@searchBar")
                 .clearValue("@searchBar")
@@ -48,7 +48,7 @@ module.exports = {
             this.waitForElementVisible("#email", 10000)
                 .setValue("#email", username)
                 .setValue("#password", password)
-                .click("button[type='submit']")
+                .clickButtonByText("Secure Sign In")
                 .api.frame(null)
             this.waitForElementNotPresent("#signInLink")
             return this
