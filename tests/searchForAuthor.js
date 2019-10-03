@@ -2,11 +2,11 @@ let nav = {}
 let item = {}
 module.exports = {
     beforeEach: browser => {
-        nav = browser.page.navBar();
-        item = browser.page.itemPage();
+        nav = browser.page.navController();        // More than one page object? No problem.
+        item = browser.page.itemPage();     // Just initialize both :)
         nav.navigate();
     },
-    "Can I search stuff?": browser => {
+    "Can I search stuff?": browser => {   
         nav.searchFor("Brandon Sanderson")
             .waitForElementVisible("@searchResultHeader")
             .assert.containsText("@searchResultHeader", "Brandon Sanderson")

@@ -1,26 +1,25 @@
-const chromedriver = require("chromedriver")
-const geckodriver = require("geckodriver")
+const chromedriver = require("chromedriver") // Pulls automatically from 
+const geckodriver = require("geckodriver")   // '/node_modules' with these requires
 module.exports = {
   "src_folders": "tests",
   "page_objects_path": "pageObjects",
 
   "test_settings": {
     "test_workers": true,
-  
-    "default": {
+
+    "default": {                        // Default settings apply across the board.
       "silent": true,
       "screenshots": {
         "enabled": false,
         "path": ""
       }
-
     },
 
-    "chrome":{
+    "chrome": {
       "webdriver": {
         "start_process": true,
-        "server_path": chromedriver.path,
-        "port": 9515
+        "server_path": chromedriver.path,   // Automatically formatted for Mac/Windows
+        "port": 9515                        // Chrome needs a port ¯\_(ツ)_/¯
       },
       "desiredCapabilities": {
         "browserName": "chrome",
@@ -33,12 +32,12 @@ module.exports = {
     "firefox": {
       "webdriver": {
         "start_process": true,
-        "server_path": geckodriver.path,
+        "server_path": geckodriver.path,    // Firefox breaks if you add a port
       },
       "desiredCapabilities": {
         "browserName": "firefox",
         "acceptInsecureCerts": true
-            }
+      }
     }
   }
 }

@@ -10,14 +10,14 @@ module.exports = {
             locateStrategy: "xpath"
         }
     },
-    commands: [{
-        searchFor: function (searchTerm) {
+    commands: [{                                // Commands can be created inline
+        searchFor: function (searchTerm) {      // *or* referenced externally.
             this.waitForElementVisible("@searchBar")
                 .clearValue("@searchBar")
                 .setValue("@searchBar", searchTerm)
-                .click(".icon-search-2")
-            return this
-        },
+                .click(".icon-search-2")        // If you only use a selector once
+            return this                         // it doesn't hurt to NOT put it in
+        },                                      // the elements section.
         pickSearchResult: function (number){
             this.api.useXpath()
             this.waitForElementVisible(`(//div[contains(@class, 'product-shelf-title')])[${number}]`)

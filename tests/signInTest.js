@@ -1,12 +1,12 @@
 let nav = {}
 module.exports = {
     before: browser => {
-        nav = browser.page.navBar();
+        nav = browser.page.navController();
         nav.navigate();
     },
     "Can I sign in?": browser => {
-        nav.signIn("qajlarson@gmail.com", "T3stingForQ@!!")
-            .assert.elementNotPresent("@signInLink")
+        nav.signIn("qajlarson@gmail.com", "T3stingForQ@!!") // one action
+            .assert.elementNotPresent("@signInLink")        // and then verifications
             .assert.containsText("@signedInHeader", "Test")
     },
     "Can I sign out?": browser => {
