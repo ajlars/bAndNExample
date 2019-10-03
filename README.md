@@ -1,7 +1,7 @@
 # bAndNExample
 
 To setup execute `npm i` to install:
-* `nightwatchjs`
+* `nightwatch`
 * `chromedriver`
 * `geckodriver`
 
