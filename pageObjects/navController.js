@@ -48,7 +48,7 @@ module.exports = {
             this.waitForElementVisible("#email", 10000)
                 .setValue("#email", username)
                 .setValue("#password", password)
-                .clickButtonByText("Secure Sign In")
+                .clickButtonByText("Secure Sign In") 
                 .api.frame(null)
             this.waitForElementNotPresent("#signInLink")
             return this
